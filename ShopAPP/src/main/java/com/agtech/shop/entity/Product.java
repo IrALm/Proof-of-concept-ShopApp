@@ -3,6 +3,7 @@ package com.agtech.shop.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "produits")
 public class Product {
 
     @Id
