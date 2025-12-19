@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .header {
+            background: #1e90ff;
+            color: white;
+            padding: 15px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #1e90ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Facture</h2>
+</div>
+
+<div class="content">
+    <p>Prénom du Client : <strong th:text="${prenomClient}"></strong></p>
+    <p>Nom du Client : <strong th:text="${nomClient}"></strong></p>
+    <p>Date : <span th:text="${date}"></span></p>
+    <p>Heure : <span th:text="${heure}"></span></p>
+
+    <p>Description :</p>
+    <p th:text="${description}"></p>
+</div>
+
+</body>
+</html>

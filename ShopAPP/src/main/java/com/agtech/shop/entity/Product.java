@@ -1,9 +1,15 @@
 package com.agtech.shop.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "produits")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Product {
 
     @Id
@@ -20,4 +26,9 @@ public class Product {
     private String description;
 
     private String imageUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "seller_id") // colonne en base
+    private Seller seller;
+
 }

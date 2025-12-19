@@ -8,25 +8,21 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "utilisateurs")
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+public class Seller {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String firstName;
-
-    @Column(nullable = false)
-    private String lastName;
+    private String fullName;
 
     @Column(nullable = false , unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<Order> orders;
+    @OneToMany(mappedBy = "seller")
+    private List<Product> products;
 }
